@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899/12/30 00:00:00.000.394,=C:\Users\Renee\Desktop\IT stuff\Graad 12\Personal stuff\Word Game!\Unit1.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.291,C:\Users\Renee\Desktop\IT stuff\Graad 12\Personal stuff\Word Game!\clsWords_u.pas=C:\Users\Renee\Desktop\IT stuff\Graad 12\Personal stuff\Word Game!\Unit1.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.991,=C:\Users\Renee\Desktop\IT stuff\Graad 12\Personal stuff\Word Game!\New1.txt</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.384,C:\Users\Renee\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Renee\Desktop\IT stuff\Graad 12\Personal stuff\Word Game!\Main_u.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.115,C:\Users\Renee\Desktop\IT stuff\Graad 12\Personal stuff\Word Game!\Word List.txt=C:\Users\Renee\Desktop\IT stuff\Graad 12\Personal stuff\Word Game!\New1.txt</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.556,C:\Users\Renee\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Renee\Desktop\IT stuff\Graad 12\Personal stuff\Word Game!\DictionAttack_p.dproj</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.384,C:\Users\Renee\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Renee\Desktop\IT stuff\Graad 12\Personal stuff\Word Game!\Main_u.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.091,=C:\Users\Renee\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.475,=C:\Users\Renee\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.846,=C:\Users\Renee\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,47 @@
+unit clsWords_u;
+
+interface
+type
+ TWords = class(TObject)
+
+ private
+  fScore: integer;
+  fWord: string;
+
+ public
+  constructor Create;
+  function CreateWords: string;
+  function CalcScore: integer;
+
+ end;
+
+implementation
+
+{ TWords }
+
+constructor TWords.Create;
+begin
+
+end;
+
+function TWords.CreateWords: string;
+ var
+  tWords: textfile;
+  sLine: string;
+begin
+ Assignfile(tWords, 'Word List.txt');
+
+ Try
+   Reset(tWords);
+ Except
+   showmessage('File Word List.txt not found');
+   exit;
+ End;
+end;
+
+function TWords.CalcScore: integer;
+begin
+
+end;
+
+end.

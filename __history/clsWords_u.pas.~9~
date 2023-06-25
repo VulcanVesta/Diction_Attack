@@ -1,0 +1,67 @@
+unit clsWords_u;
+interface
+ uses math;
+
+type
+ TWords = class(TObject)
+
+ private
+  fScore: integer;
+  fWord: string;
+
+ public
+  constructor Create;
+  function CreateWords(iLVL: integer): string;
+  function CalcScore: integer;
+
+ end;
+
+implementation
+
+{ TWords }
+
+
+constructor TWords.Create;
+begin
+ fScore := 0;
+ fWord := '';
+end;
+
+function TWords.CreateWords(iLVL: integer): string;
+ var
+  tWords: textfile;
+  sLine, sWord: string;
+  iLineCount, iRandom: integer;
+begin
+ Assignfile(tWords, 'Word List.txt');
+
+ Try
+   Reset(tWords);
+ Except
+   exit;
+ End;
+
+ iLineCount := 1;
+ Randomize;
+ iRandom := RandomRange(1, 101);
+ while NOT EOF(tWords) do
+  begin
+   readln(tWords, sLine);
+  if iLineCount = iRandom then
+   begin
+   // sWord[1] := Chr(Ord(sWord[1]) + 32);     //Subtract 32 from ASCII value to make lowercase3      //Why no work?
+    sWord := sLine;
+   end;
+   Inc(iLineCount);
+  end;
+
+ Closefile(tWords);
+ Result := sWord;
+end;
+
+function TWords.CalcScore: integer;
+begin
+
+end;
+
+end.

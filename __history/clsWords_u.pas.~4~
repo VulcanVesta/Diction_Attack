@@ -1,0 +1,63 @@
+unit clsWords_u;
+interface
+ uses math;
+
+type
+ TWords = class(TObject)
+
+ private
+  fScore: integer;
+  fWord: string;
+
+ public
+  constructor Create;
+  function CreateWords(iLVL: integer): string;
+  function CalcScore: integer;
+
+ end;
+
+implementation
+
+{ TWords }
+
+constructor TWords.Create;
+begin
+
+end;
+
+
+function TWords.CreateWords(iLVL: integer): string;
+ var
+  tWords: textfile;
+  sLine: string;
+  iLineCount, iRandom: integer;
+begin
+ Assignfile(tWords, 'Word List.txt');
+
+ Try
+   Reset(tWords);
+ Except
+   exit;
+ End;
+
+ iLineCount := 1;
+ iRandom := RandomRange(1, 101);
+ while NOT EOF(tWords) do
+  begin
+   Randomize;
+   if iLineCount = iRandom then         // 1/30 chance for a word to be chosen
+    begin
+     readln(tWords, sLine);
+    end;
+   Inc(iLineCount);
+  end;
+
+ Result := sLine;
+end;
+
+function TWords.CalcScore: integer;
+begin
+
+end;
+
+end.

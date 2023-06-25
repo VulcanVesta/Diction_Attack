@@ -1,0 +1,129 @@
+unit Main_u;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.GIFImg, Vcl.ExtCtrls,
+  Vcl.StdCtrls, math, clsWords_u;
+
+type
+  TfrmMain = class(TForm)
+    imgBackground: TImage;
+    imgShip: TImage;
+    lbl1: TLabel;
+    lbl2: TLabel;
+    lbl3: TLabel;
+    lbl4: TLabel;
+    lbl5: TLabel;
+    btnStart: TButton;
+    tmrWords: TTimer;
+    tmrPlaceWords: TTimer;
+    procedure FormCreate(Sender: TObject);
+    procedure btnStartClick(Sender: TObject);
+    procedure tmrWordsTimer(Sender: TObject);
+    procedure tmrPlaceWordsTimer(Sender: TObject);
+  private
+    { Private declarations }
+    objWords: TWords;
+    iCount: integer;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMain: TfrmMain;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmMain.btnStartClick(Sender: TObject);
+begin
+ btnStart.Visible := False;
+
+ objWords := TWords.create;
+ iCount := 1;    //var used in timer
+ tmrPlaceWords.Enabled := True;
+ objWords.Free;
+
+ tmrWords.Enabled := true;
+end;
+
+procedure TfrmMain.FormCreate(Sender: TObject);
+begin
+ (imgBackground.Picture.Graphic as TGIFImage).Animate := True;
+ (imgShip.Picture.Graphic as TGIFImage).Animate := True;
+end;
+procedure TfrmMain.tmrPlaceWordsTimer(Sender: TObject);
+begin
+ if iCount = 1 then
+  begin
+   lbl1.Caption :=  objWords.CreateWords(1);
+   lbl1.Top := -20;
+   lbl1.left := RandomRange(0,601);
+   Inc(iCount);
+  end
+ else if iCount = 2 then
+  begin
+   lbl2.Caption :=  objWords.CreateWords(1);
+   lbl2.Top := -20;
+   lbl2.left := RandomRange(0,601);
+   Inc(iCount);
+  end
+ else if iCount = 3 then
+  begin
+   lbl3.Caption :=  objWords.CreateWords(1);
+   lbl3.Top := -20;
+   lbl3.left := RandomRange(0,601);
+   Inc(iCount);
+  end
+ else if iCount = 4 then
+  begin
+   tmrPlaceWords.Enabled := False;
+  end;
+end;
+
+procedure TfrmMain.tmrWordsTimer(Sender: TObject);
+begin
+ if (lbl1.Top + lbl1.Height) < imgShip.Top then
+  begin
+   lbl1.Top := lbl1.Top + 5;
+   if (imgShip.Left + imgShip.Width)/2 > (lbl1.left + lbl1.Width)/2 then
+    begin
+     lbl1.Left := lbl1.Left + 1;
+    end
+   else if (imgShip.Left + imgShip.Width)/2 < (lbl1.left + lbl1.Width)/2 then
+    begin
+     lbl1.Left := lbl1.Left - 1;
+    end;
+  end;
+
+ if (lbl2.Top + lbl2.Height) < imgShip.Top then
+  begin
+   lbl2.Top := lbl2.Top + 5;
+   if (imgShip.Left + imgShip.Width)/2 > (lbl2.left + lbl2.Width)/2 then
+    begin
+     lbl2.Left := lbl2.Left + 1;
+    end
+   else if (imgShip.Left + imgShip.Width)/2 < (lbl2.left + lbl2.Width)/2 then
+    begin
+     lbl2.Left := lbl2.Left - 1;
+    end;
+  end;
+
+ if (lbl3.Top + lbl3.Height) < imgShip.Top then
+  begin
+   lbl3.Top := lbl3.Top + 5;
+   if (imgShip.Left + imgShip.Width)/2 > (lbl3.left + lbl3.Width)/2 then
+    begin
+     lbl3.Left := lbl3.Left + 1;
+    end
+   else if (imgShip.Left + imgShip.Width)/2 < (lbl3.left + lbl3.Width)/2 then
+    begin
+     lbl3.Left := lbl3.Left - 1;
+    end;
+  end;
+end;
+
+end.

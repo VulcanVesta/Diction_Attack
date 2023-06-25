@@ -1,0 +1,37 @@
+unit clsWords_u;
+
+interface
+type
+ TWords = class(TObject)
+
+ private
+  fScore: integer;
+  fWord: string;
+
+ public
+  constructor Create;
+  function CreateWords: string;
+  function CalcScore: integer;
+
+ end;
+
+implementation
+
+{ TWords }
+
+constructor TWords.Create;
+begin
+
+end;
+
+function TWords.CreateWords: string;
+begin
+
+end;
+
+function TWords.CalcScore: integer;
+begin
+
+end;
+
+end.
